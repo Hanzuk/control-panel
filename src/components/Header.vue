@@ -1,18 +1,20 @@
 <template>
-	<div
-		class="header flex items-center justify-between flex-shrink-0 h-12 px-6 z-40"
-	>
-		<h1 class="text-xl text-dark-100">Dashboard</h1>
-		<button class="xl:hidden focus:outline-none" @click="toggleSidebar">
+	<div class="header flex items-center px-6 shadow-md z-10 bg-light-100">
+		<button
+			type="button"
+			class="lg:hidden ml-auto focus:outline-none"
+			@click="open"
+		>
 			<svg
-				class="w-6 h-6 text-dark-100"
+				class="w-6 h-6"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 			>
-				<path
-					class="fill-current"
-					d="M3 5a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm6 7a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H10a1 1 0 0 1-1-1zm-6 7a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"
-				/>
+				<path d="M3 12h18M3 6h18M3 18h18" />
 			</svg>
 		</button>
 	</div>
@@ -22,7 +24,13 @@
 import { mapActions } from 'vuex';
 
 export default {
-	name: 'header',
-	methods: mapActions('sidebar', ['toggleSidebar'])
+	name: 'app-header',
+	methods: mapActions('sidebar', ['open'])
 };
 </script>
+
+<style>
+.header {
+	grid-area: header;
+}
+</style>

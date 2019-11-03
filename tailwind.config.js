@@ -1,75 +1,66 @@
 module.exports = {
 	theme: {
+		transitionProperty: {
+			none: 'none',
+			all: 'all',
+			color: 'color',
+			bg: 'background-color',
+			border: 'border-color',
+			colors: ['color', 'background-color', 'border-color'],
+			opacity: 'opacity',
+			transform: 'transform'
+		},
+		transitionDuration: {
+			'75': '75ms',
+			'150': '150ms',
+			'300': '300ms',
+			'500': '500ms',
+			'600': '600ms',
+			'750': '750ms',
+			'900': '900ms'
+		},
+		transitionTimingFunction: {
+			exponential: 'cubic-bezier(1, 0, 0, 1)',
+			backward: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)',
+			sine: 'cubic-bezier(0.39, 0.58, 0.57, 1)'
+		},
 		extend: {
 			colors: {
 				light: {
-					500: '#FFFFFF',
-					600: '#ebebeb',
-					700: '#d7d7d7',
-					800: '#c3c3c3',
-					900: '#afafaf'
+					100: '#FFFFFF',
+					200: '#ebebeb',
+					300: '#d7d7d7',
+					400: '#c3c3c3',
+					500: '#afafaf'
 				},
 				dark: {
-					100: '#6c6c6c',
-					200: '#585858',
-					300: '#444444',
-					400: '#303030',
-					500: '#1C1C1C'
+					500: '#7a7a7e',
+					600: '#66666a',
+					700: '#525256',
+					800: '#3e3e42',
+					900: '#2a2a2e'
 				},
-				primary: {
-					100: '#c8abff',
-					200: '#b497ff',
-					300: '#a083ff',
-					400: '#8c6fff',
-					500: '#785BF4',
-					600: '#6447e0',
-					700: '#5033cc',
-					800: '#3c1fb8',
-					900: '#280ba4'
+				amethyst: {
+					100: '#ebadff',
+					200: '#d799ff',
+					300: '#c385ff',
+					400: '#af71f9',
+					500: '#9b5de5',
+					600: '#8749d1',
+					700: '#7335bd',
+					800: '#5f21a9',
+					900: '#4b0d95'
 				},
-				success: {
-					100: '#94ffb4',
-					200: '#80ffa0',
-					300: '#6cff8c',
-					400: '#58f978',
-					500: '#44E564',
-					600: '#30d150',
-					700: '#1cbd3c',
-					800: '#08a928',
-					900: '#009514'
-				},
-				info: {
-					100: '#80ffff',
-					200: '#6cefff',
-					300: '#58dbff',
-					400: '#44c7ff',
-					500: '#30B3FF',
-					600: '#1c9feb',
-					700: '#088bd7',
-					800: '#0077c3',
-					900: '#0063af'
-				},
-				warning: {
-					100: '#ffff64',
-					200: '#ffff50',
-					300: '#fff83c',
-					400: '#ffe428',
-					500: '#FFD014',
-					600: '#ebbc00',
-					700: '#d7a800',
-					800: '#c39400',
-					900: '#af8000'
-				},
-				danger: {
-					100: '#ff8fa6',
-					200: '#ff7b92',
-					300: '#ff677e',
-					400: '#ff536a',
-					500: '#FF3F56',
-					600: '#eb2b42',
-					700: '#d7172e',
-					800: '#c3031a',
-					900: '#af0006'
+				capri: {
+					100: '#50ffff',
+					200: '#3cf7ff',
+					300: '#28e3ff',
+					400: '#14cfff',
+					500: '#00bbf9',
+					600: '#00a7e5',
+					700: '#0093d1',
+					800: '#007fbd',
+					900: '#006ba9'
 				}
 			},
 			spacing: {
@@ -84,5 +75,5 @@ module.exports = {
 		}
 	},
 	variants: {},
-	plugins: []
+	plugins: [require('tailwindcss-transitions')()]
 };

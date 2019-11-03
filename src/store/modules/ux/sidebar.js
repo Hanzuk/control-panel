@@ -1,17 +1,23 @@
 export const namespaced = true;
 
 export const state = {
-	open: false
+	isOpen: false
 };
 
 export const actions = {
-	toggleSidebar({ commit }) {
-		commit('CHANGE_OPEN');
+	open({ commit }) {
+		commit('OPEN_SIDEBAR');
+	},
+	close({ commit }) {
+		commit('CLOSE_SIDEBAR');
 	}
 };
 
 export const mutations = {
-	CHANGE_OPEN(state) {
-		state.open = !state.open;
+	OPEN_SIDEBAR(state) {
+		state.isOpen = true;
+	},
+	CLOSE_SIDEBAR(state) {
+		state.isOpen = false;
 	}
 };
