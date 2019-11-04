@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="sidebar fixed lg:static w-64 top-0 bottom-0 left-auto right-0 z-50 bg-light-100"
+		class="sidebar fixed lg:static w-64 top-0 bottom-0 left-auto right-0 z-20 lg:z-auto shadow-md bg-light-100"
 		:class="{ open: ux.sidebarIsOpen }"
 	>
 		<div class="sidebar-head flex items-center justify-center">
@@ -16,11 +16,7 @@
 					<li v-for="item in menuItems" :key="item">
 						<button
 							class="flex items-center w-full h-10 px-3 py-2 focus:outline-none"
-							@click="
-								select(menuItems.indexOf(item));
-								$router.push({ name: item.toLowerCase() });
-								$store.dispatch('ux/closeSidebar');
-							"
+							@click="select(menuItems.indexOf(item))"
 						>
 							<Icon
 								:name="item.toLowerCase()"
@@ -28,7 +24,7 @@
 								:class="
 									selected === menuItems.indexOf(item)
 										? 'text-light-100'
-										: 'text-dark-500'
+										: 'text-light-500'
 								"
 							/>
 							<span
@@ -36,7 +32,7 @@
 								:class="
 									selected === menuItems.indexOf(item)
 										? 'text-light-100'
-										: 'text-dark-500'
+										: 'text-light-500'
 								"
 								>{{ item }}</span
 							>
@@ -62,6 +58,12 @@ export default {
 	methods: {
 		select(i) {
 			this.selected = i;
+			this.$router.push({ name: this.menuItems[i].toLowerCase() });
+			if (window.innerWidth < 1024) {
+				setTimeout(() => {
+					this.$store.dispatch('ux/closeSidebar');
+				}, 350);
+			}
 		}
 	}
 };
@@ -84,7 +86,6 @@ export default {
 @media (min-width: 1024px) {
 	.sidebar {
 		transform: translateX(0);
-		transition: none;
 	}
 }
 </style>

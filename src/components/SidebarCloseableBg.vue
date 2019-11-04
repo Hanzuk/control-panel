@@ -1,10 +1,12 @@
 <template>
-	<!-- TODO Hacerlo mas generico para usarlo con un modal, etc -->
-	<transition name="fade">
+	<transition
+		enter-active-class="animated fadeIn faster"
+		leave-active-class="animated fadeOut fast"
+	>
 		<button
 			type="button"
 			v-if="ux.sidebarIsOpen"
-			class="fixed w-full h-full top-0 bottom-0 left-0 right-0 z-40 opacity-50 cursor-default bg-dark-700"
+			class="sidebar-closeable-bg fixed w-full h-full top-0 bottom-0 left-0 right-0 z-10 cursor-default"
 			@click="closeSidebar"
 		></button>
 	</transition>
@@ -20,13 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 700ms ease-out;
+.sidebar-closeable-bg {
+	background-color: rgba(0, 0, 0, 0.281);
 }
 </style>

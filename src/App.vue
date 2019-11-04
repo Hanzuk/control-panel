@@ -13,13 +13,15 @@
 import Header from '@/components/Header.vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Main from '@/components/Main.vue';
+import CloseBackground from '@/components/SidebarCloseableBg.vue';
 
 export default {
 	name: 'app',
 	components: {
 		Header,
 		Sidebar,
-		Main
+		Main,
+		CloseBackground
 	}
 };
 </script>
@@ -28,6 +30,8 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'assets/animate.css';
 
 .app {
 	display: grid;
