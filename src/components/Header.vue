@@ -3,19 +3,9 @@
 		<button
 			type="button"
 			class="lg:hidden ml-auto focus:outline-none"
-			@click="open"
+			@click="openSidebar"
 		>
-			<svg
-				class="w-6 h-6"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			>
-				<path d="M3 12h18M3 6h18M3 18h18" />
-			</svg>
+			<Icon name="menu" class="w-6 h-6 fill-current text-dark-500" />
 		</button>
 	</div>
 </template>
@@ -24,8 +14,7 @@
 import { mapActions } from 'vuex';
 
 export default {
-	name: 'app-header',
-	methods: mapActions('sidebar', ['open'])
+	methods: mapActions('ux', ['openSidebar'])
 };
 </script>
 

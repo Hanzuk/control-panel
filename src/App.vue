@@ -5,36 +5,26 @@
 		<Main>
 			<router-view />
 		</Main>
-		<transition name="fade">
-			<button
-				type="button"
-				v-if="sidebar.isOpen"
-				class="fixed w-full h-full top-0 bottom-0 left-0 right-0 z-40 opacity-50 cursor-default bg-dark-700"
-				@click="close"
-			></button>
-		</transition>
+		<CloseBackground />
 	</div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
 import Header from '@/components/Header.vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Main from '@/components/Main.vue';
 
 export default {
+	name: 'app',
 	components: {
 		Header,
 		Sidebar,
 		Main
-	},
-	computed: mapState(['sidebar']),
-	methods: mapActions('sidebar', ['close'])
+	}
 };
 </script>
 
-<style>
+<style lang="scss">
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,15 +41,5 @@ export default {
 		grid-template-columns: 16rem 1fr;
 		grid-template-areas: 'sidebar header' 'sidebar main';
 	}
-}
-
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 700ms ease-out;
 }
 </style>

@@ -1,23 +1,23 @@
 export const namespaced = true;
 
 export const state = {
-	isOpen: false
+	sidebarIsOpen: false
 };
 
 export const actions = {
-	open({ commit }) {
+	openSidebar({ commit }) {
 		commit('OPEN_SIDEBAR');
 	},
-	close({ commit }) {
+	closeSidebar({ commit }) {
 		commit('CLOSE_SIDEBAR');
 	}
 };
 
 export const mutations = {
 	OPEN_SIDEBAR(state) {
-		state.isOpen = true;
+		state.sidebarIsOpen = true;
 	},
 	CLOSE_SIDEBAR(state) {
-		state.isOpen = false;
+		state.sidebarIsOpen = false;
 	}
 };
