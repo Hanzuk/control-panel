@@ -3609,13 +3609,13 @@
 }
 
 .animated.slow {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 .animated.slower {
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
 }
 
 @media (print), (prefers-reduced-motion: reduce) {

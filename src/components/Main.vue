@@ -1,11 +1,5 @@
-<template functional>
-	<div class="main p-3 overflow-y-auto">
+<template>
+	<div class="flex-grow px-6 pt-10 mb-10 lg:px-12 overflow-y-auto">
 		<slot></slot>
 	</div>
 </template>
-
-<style>
-.main {
-	grid-area: main;
-}
-</style>

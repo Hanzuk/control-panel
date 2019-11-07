@@ -1,41 +1,72 @@
 <template>
 	<div
-		class="sidebar fixed lg:static w-64 top-0 bottom-0 left-auto right-0 z-20 lg:z-auto shadow-md bg-light-100"
-		:class="{ open: ux.sidebarIsOpen }"
+		class="flex flex-col flex-shrink-0 fixed lg:static top-0 bottom-0 left-auto w-64 z-30 bg-gray-700 transition-all"
+		:class="[
+			{ '-right-100': !ux.sidebarIsOpen },
+			{ 'right-0': ux.sidebarIsOpen }
+		]"
 	>
-		<div class="sidebar-head flex items-center justify-center">
-			<img src="@/assets/logo.svg" alt="Logo" />
+		<div class="flex flex-shrink-0 items-center w-full h-20 px-3">
+			<img class="ml-3" src="@/assets/logo.svg" alt="Logo" />
 		</div>
-		<div class="sidebar-body p-4 overflow-y-auto">
-			<nav class="relative">
-				<span
-					class="absolute w-full h-10 rounded transition-transform transition-500 transition-backward bg-amethyst-300"
-					:style="{ transform: `translateY(${100 * selected}%)` }"
-				></span>
-				<ul class="relative">
-					<li v-for="item in menuItems" :key="item">
+		<div class="flex-grow flex-shrink-0 overflow-y-auto">
+			<nav class="px-4 py-4">
+				<ul>
+					<li>
 						<button
-							class="flex items-center w-full h-10 px-3 py-2 focus:outline-none"
-							@click="select(menuItems.indexOf(item))"
+							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
+							:class="
+								selected === 0
+									? 'text-white bg-gray-800'
+									: 'text-gray-500'
+							"
+							@click="select(0)"
 						>
-							<Icon
-								:name="item.toLowerCase()"
-								class="w-6 h-6 fill-current transition-color transition-500 transition-backward"
-								:class="
-									selected === menuItems.indexOf(item)
-										? 'text-light-100'
-										: 'text-light-500'
-								"
-							/>
-							<span
-								class="ml-2 text-sm font-normal transition-color transition-500 transition-backward"
-								:class="
-									selected === menuItems.indexOf(item)
-										? 'text-light-100'
-										: 'text-light-500'
-								"
-								>{{ item }}</span
-							>
+							<Icon name="home" class="w-6 h-6 fill-current" />
+							<span class="ml-3">Dashboard</span>
+						</button>
+					</li>
+					<li>
+						<button
+							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
+							:class="
+								selected === 1
+									? 'text-white bg-gray-800'
+									: 'text-gray-500'
+							"
+							@click="select(1)"
+						>
+							<Icon name="reports" class="w-6 h-6 fill-current" />
+							<span class="ml-3">Reports</span>
+						</button>
+					</li>
+					<li>
+						<button
+							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
+							:class="
+								selected === 2
+									? 'text-white bg-gray-800'
+									: 'text-gray-500'
+							"
+							@click="select(2)"
+						>
+							<Icon name="shield" class="w-6 h-6 fill-current" />
+							<span class="ml-3">Security</span>
+						</button>
+					</li>
+					<hr class="-mx-4 my-5 border border-gray-800" />
+					<li>
+						<button
+							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
+							:class="
+								selected === 3
+									? 'text-white bg-gray-800'
+									: 'text-gray-500'
+							"
+							@click="select(3)"
+						>
+							<Icon name="settings" class="w-6 h-6 fill-current" />
+							<span class="ml-3">Settings</span>
 						</button>
 					</li>
 				</ul>
@@ -50,7 +81,6 @@ import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
-			menuItems: ['Dashboard', 'Reports', 'Security'],
 			selected: 0
 		};
 	},
@@ -58,34 +88,17 @@ export default {
 	methods: {
 		select(i) {
 			this.selected = i;
-			this.$router.push({ name: this.menuItems[i].toLowerCase() });
-			if (window.innerWidth < 1024) {
-				setTimeout(() => {
-					this.$store.dispatch('ux/closeSidebar');
-				}, 350);
-			}
 		}
 	}
 };
 </script>
 
 <style lang="scss">
-.sidebar {
-	display: grid;
-	grid-area: sidebar;
-	grid-template-columns: 1fr;
-	grid-template-rows: 4rem 1fr;
-	transform: translateX(100%);
-	transition: transform 700ms cubic-bezier(0.645, 0.045, 0.355, 1);
-
-	&.open {
-		transform: translateX(0%);
-	}
+.-right-100 {
+	right: -100%;
 }
 
-@media (min-width: 1024px) {
-	.sidebar {
-		transform: translateX(0);
-	}
+.transition-all {
+	transition: all 700ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 </style>
