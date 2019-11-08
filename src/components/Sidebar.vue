@@ -13,61 +13,85 @@
 			<nav class="px-4 py-4">
 				<ul>
 					<li>
-						<button
-							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
-							:class="
-								selected === 0
-									? 'text-white bg-gray-800'
-									: 'text-gray-500'
-							"
-							@click="select(0)"
+						<router-link
+							:to="{ name: 'dashboard' }"
+							v-slot="{ href, navigate, isExactActive }"
 						>
-							<Icon name="home" class="w-6 h-6 fill-current" />
-							<span class="ml-3">Dashboard</span>
-						</button>
+							<a
+								:href="href"
+								class="flex items-center w-full px-3 py-3 rounded-lg hover:text-white focus:outline-none transition-all"
+								:class="
+									isExactActive
+										? 'text-white bg-gray-800'
+										: 'text-gray-500'
+								"
+								@click="navigate"
+							>
+								<Icon name="home" class="w-6 h-6 fill-current" />
+								<span class="ml-3">Dashboard</span>
+							</a>
+						</router-link>
 					</li>
 					<li>
-						<button
-							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
-							:class="
-								selected === 1
-									? 'text-white bg-gray-800'
-									: 'text-gray-500'
-							"
-							@click="select(1)"
+						<router-link
+							:to="{ name: 'reports' }"
+							v-slot="{ href, navigate, isExactActive }"
 						>
-							<Icon name="reports" class="w-6 h-6 fill-current" />
-							<span class="ml-3">Reports</span>
-						</button>
+							<a
+								:href="href"
+								class="flex items-center w-full px-3 py-3 rounded-lg hover:text-white focus:outline-none transition-all"
+								:class="
+									isExactActive
+										? 'text-white bg-gray-800'
+										: 'text-gray-500'
+								"
+								@click="navigate"
+							>
+								<Icon name="reports" class="w-6 h-6 fill-current" />
+								<span class="ml-3">Reports</span>
+							</a>
+						</router-link>
 					</li>
 					<li>
-						<button
-							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
-							:class="
-								selected === 2
-									? 'text-white bg-gray-800'
-									: 'text-gray-500'
-							"
-							@click="select(2)"
+						<router-link
+							:to="{ name: 'security' }"
+							v-slot="{ href, navigate, isExactActive }"
 						>
-							<Icon name="shield" class="w-6 h-6 fill-current" />
-							<span class="ml-3">Security</span>
-						</button>
+							<a
+								:href="href"
+								class="flex items-center w-full px-3 py-3 rounded-lg hover:text-white focus:outline-none transition-all"
+								:class="
+									isExactActive
+										? 'text-white bg-gray-800'
+										: 'text-gray-500'
+								"
+								@click="navigate"
+							>
+								<Icon name="shield" class="w-6 h-6 fill-current" />
+								<span class="ml-3">Security</span>
+							</a>
+						</router-link>
 					</li>
 					<hr class="-mx-4 my-5 border border-gray-800" />
 					<li>
-						<button
-							class="flex items-center w-full px-3 py-3 rounded-lg focus:outline-none transition-all"
-							:class="
-								selected === 3
-									? 'text-white bg-gray-800'
-									: 'text-gray-500'
-							"
-							@click="select(3)"
+						<router-link
+							:to="{ name: 'settings' }"
+							v-slot="{ href, navigate, isExactActive }"
 						>
-							<Icon name="settings" class="w-6 h-6 fill-current" />
-							<span class="ml-3">Settings</span>
-						</button>
+							<a
+								:href="href"
+								class="flex items-center w-full px-3 py-3 rounded-lg hover:text-white focus:outline-none transition-all"
+								:class="
+									isExactActive
+										? 'text-white bg-gray-800'
+										: 'text-gray-500'
+								"
+								@click="navigate"
+							>
+								<Icon name="settings" class="w-6 h-6 fill-current" />
+								<span class="ml-3">Settings</span>
+							</a>
+						</router-link>
 					</li>
 				</ul>
 			</nav>
@@ -79,26 +103,20 @@
 import { mapState } from 'vuex';
 
 export default {
-	data() {
-		return {
-			selected: 0
-		};
-	},
-	computed: mapState(['ux']),
-	methods: {
-		select(i) {
-			this.selected = i;
-		}
-	}
+	computed: mapState(['ux'])
 };
 </script>
 
 <style lang="scss">
+.active {
+	color: red;
+}
+
 .-right-100 {
 	right: -100%;
 }
 
 .transition-all {
-	transition: all 700ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+	transition: all 400ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 </style>

@@ -3,9 +3,7 @@
 		<sidebar />
 		<div class="flex flex-col flex-grow">
 			<Header />
-			<Main>
-				<router-view />
-			</Main>
+			<router-view />
 		</div>
 		<SidebarBackground />
 	</div>
@@ -14,7 +12,6 @@
 <script>
 import Sidebar from '@/components/Sidebar.vue';
 import Header from '@/components/Header.vue';
-import Main from '@/components/Main.vue';
 import SidebarBackground from '@/components/SidebarBackground.vue';
 
 export default {
@@ -22,7 +19,6 @@ export default {
 	components: {
 		Sidebar,
 		Header,
-		Main,
 		SidebarBackground
 	}
 };

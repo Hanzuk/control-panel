@@ -2,15 +2,17 @@
 	<div
 		class="flex items-center justify-between flex-shrink-0 h-20 relative px-6 lg:px-12 shadow bg-white"
 	>
-		<h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+		<h1 class="text-2xl font-semibold text-gray-900">{{ routeName }}</h1>
 		<div class="hidden lg:flex items-center">
-			<button>
-				<Icon name="search" class="w-6 h-6 fill-current text-gray-600" />
+			<button class="text-gray-600 hover:text-gray-500">
+				<Icon name="search" class="w-6 h-6 fill-current" />
 			</button>
-			<button class="ml-8">
-				<Icon name="bell" class="w-6 h-6 fill-current text-gray-600" />
+			<button class="ml-8 text-gray-600 hover:text-gray-500">
+				<Icon name="bell" class="w-6 h-6 fill-current" />
 			</button>
-			<button class="px-3 py-2 ml-8 rounded text-gray-900 bg-gray-300">
+			<button
+				class="px-3 py-2 ml-8 rounded text-gray-900 bg-gray-300 hover:bg-gray-400 focus:outline-none"
+			>
 				Log out
 			</button>
 		</div>
@@ -22,3 +24,15 @@
 		</button>
 	</div>
 </template>
+
+<script>
+export default {
+	computed: {
+		routeName() {
+			// const { name } = this.$route;
+			// return name.charAt(0).toUpperCase() + name.slice(1);
+			return 'Dashboard';
+		}
+	}
+};
+</script>
