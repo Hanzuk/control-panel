@@ -23,7 +23,7 @@
 			<h2 class="text-xl font-semibold">Recent Avtivity</h2>
 			<a href="@" class="flex items-center hover:text-gray-700">
 				<span>View all activities</span>
-				<Icon name="arrow-right" class="w-4 h-4 mt-1 ml-1 fill-current" />
+				<BaseIcon name="arrow-right" class="w-4 h-4 mt-1 ml-1" />
 			</a>
 		</div>
 		<div class="lg:flex mb-10 px-2 lg:px-8">

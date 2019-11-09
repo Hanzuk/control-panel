@@ -27,7 +27,7 @@
 								"
 								@click="navigate"
 							>
-								<Icon name="home" class="w-6 h-6 fill-current" />
+								<BaseIcon name="home" class="w-6 h-6" />
 								<span class="ml-3">Dashboard</span>
 							</a>
 						</router-link>
@@ -47,7 +47,7 @@
 								"
 								@click="navigate"
 							>
-								<Icon name="reports" class="w-6 h-6 fill-current" />
+								<BaseIcon name="reports" class="w-6 h-6" />
 								<span class="ml-3">Reports</span>
 							</a>
 						</router-link>
@@ -67,7 +67,7 @@
 								"
 								@click="navigate"
 							>
-								<Icon name="shield" class="w-6 h-6 fill-current" />
+								<BaseIcon name="shield" class="w-6 h-6" />
 								<span class="ml-3">Security</span>
 							</a>
 						</router-link>
@@ -88,7 +88,7 @@
 								"
 								@click="navigate"
 							>
-								<Icon name="settings" class="w-6 h-6 fill-current" />
+								<BaseIcon name="settings" class="w-6 h-6" />
 								<span class="ml-3">Settings</span>
 							</a>
 						</router-link>

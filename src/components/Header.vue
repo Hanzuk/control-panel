@@ -5,10 +5,10 @@
 		<h1 class="text-2xl font-semibold text-gray-900">{{ routeName }}</h1>
 		<div class="hidden lg:flex items-center">
 			<button class="text-gray-600 hover:text-gray-500">
-				<Icon name="search" class="w-6 h-6 fill-current" />
+				<BaseIcon name="search" class="w-6 h-6" />
 			</button>
 			<button class="ml-8 text-gray-600 hover:text-gray-500">
-				<Icon name="bell" class="w-6 h-6 fill-current" />
+				<BaseIcon name="bell" class="w-6 h-6" />
 			</button>
 			<button
 				class="px-3 py-2 ml-8 rounded text-gray-900 bg-gray-300 hover:bg-gray-400 focus:outline-none"
@@ -20,7 +20,7 @@
 			class="lg:hidden ml-auto focus:outline-none"
 			@click="$store.dispatch('ux/openSidebar')"
 		>
-			<Icon name="menu" class="w-8 h-8 fill-current text-gray-600" />
+			<BaseIcon name="menu" class="w-8 h-8 text-gray-600" />
 		</button>
 	</div>
 </template>

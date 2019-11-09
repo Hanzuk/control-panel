@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import DashboardLayout from '../layouts/dashboard.vue';
+import DashboardLayout from '../layouts/DashboardLayout.vue';
 
 Vue.use(VueRouter);
 
