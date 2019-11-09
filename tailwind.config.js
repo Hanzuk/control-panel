@@ -1,66 +1,38 @@
 module.exports = {
 	theme: {
-		transitionProperty: {
-			none: 'none',
-			all: 'all',
-			color: 'color',
-			bg: 'background-color',
-			border: 'border-color',
-			colors: ['color', 'background-color', 'border-color'],
-			opacity: 'opacity',
-			transform: 'transform'
-		},
-		transitionDuration: {
-			'75': '75ms',
-			'150': '150ms',
-			'300': '300ms',
-			'500': '500ms',
-			'600': '600ms',
-			'750': '750ms',
-			'900': '900ms'
-		},
-		transitionTimingFunction: {
-			exponential: 'cubic-bezier(1, 0, 0, 1)',
-			backward: 'cubic-bezier(0.68, -0.55, 0.27, 1.55)',
-			sine: 'cubic-bezier(0.39, 0.58, 0.57, 1)'
-		},
 		extend: {
 			colors: {
-				light: {
-					100: '#FFFFFF',
-					200: '#ebebeb',
-					300: '#d7d7d7',
-					400: '#c3c3c3',
-					500: '#afafaf'
+				white: '#ffffff',
+				'blue-night': {
+					100: '#828896',
+					200: '#6e7482',
+					300: '#5a606e',
+					400: '#464c5a',
+					500: '#323846',
+					600: '#1e2432',
+					700: '#0a101e'
 				},
-				dark: {
-					500: '#7a7a7e',
-					600: '#66666a',
-					700: '#525256',
-					800: '#3e3e42',
-					900: '#2a2a2e'
+				gray: {
+					100: '#f7fafc',
+					200: '#edf2f7',
+					300: '#e2e8f0',
+					400: '#cbd5e0',
+					500: '#a0aec0',
+					600: '#718096',
+					700: '#4a5568',
+					800: '#2d3748',
+					900: '#1a202c'
 				},
-				amethyst: {
-					100: '#ebadff',
-					200: '#d799ff',
-					300: '#c385ff',
-					400: '#af71f9',
-					500: '#9b5de5',
-					600: '#8749d1',
-					700: '#7335bd',
-					800: '#5f21a9',
-					900: '#4b0d95'
-				},
-				capri: {
-					100: '#50ffff',
-					200: '#3cf7ff',
-					300: '#28e3ff',
-					400: '#14cfff',
-					500: '#00bbf9',
-					600: '#00a7e5',
-					700: '#0093d1',
-					800: '#007fbd',
-					900: '#006ba9'
+				'blue-sky': {
+					100: '#c8ffff',
+					200: '#b4ffff',
+					300: '#a0ffff',
+					400: '#8cefff',
+					500: '#78dbf3',
+					600: '#64c7df',
+					700: '#50b3cb',
+					800: '#3c9fb7',
+					900: '#288ba3'
 				}
 			},
 			spacing: {
@@ -75,5 +47,5 @@ module.exports = {
 		}
 	},
 	variants: {},
-	plugins: [require('tailwindcss-transitions')()]
+	plugins: []
 };
