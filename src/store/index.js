@@ -1,10 +1,10 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-import * as ux from './modules/ux';
+import * as ux from './modules/ux'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
-	modules: { ux }
-});
+  modules: { ux },
+})
