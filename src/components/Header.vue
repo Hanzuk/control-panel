@@ -26,12 +26,12 @@
 </template>
 
 <script>
+import { upperFirst } from 'lodash';
+
 export default {
 	computed: {
 		routeName() {
-			// const { name } = this.$route;
-			// return name.charAt(0).toUpperCase() + name.slice(1);
-			return 'Dashboard';
+			return upperFirst(this.$route.name);
 		}
 	}
 };

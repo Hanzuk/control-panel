@@ -108,10 +108,6 @@ export default {
 </script>
 
 <style lang="scss">
-.active {
-	color: red;
-}
-
 .-right-100 {
 	right: -100%;
 }
