@@ -9,9 +9,6 @@ export default {
 </script>
 
 <style lang="scss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import 'assets/scss/global';
 @import 'assets/animate.css';
 </style>

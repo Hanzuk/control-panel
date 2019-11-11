@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col flex-shrink-0 fixed lg:static top-0 bottom-0 left-auto w-64 z-30 bg-gray-700 transition-all"
+    class="flex flex-col flex-shrink-0 fixed lg:static top-0 bottom-0 left-auto w-64 z-30 bg-gray-700 tp-right td-400 ttf-sine"
     :class="[
       { '-right-100': !ux.sidebarIsOpen },
       { 'right-0': ux.sidebarIsOpen },
@@ -98,13 +98,3 @@ export default {
   computed: mapState(['ux']),
 }
 </script>
-
-<style lang="scss">
-.-right-100 {
-  right: -100%;
-}
-
-.transition-all {
-  transition: all 400ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
   <transition
-    enter-active-class="animated fadeIn slow"
-    leave-active-class="animated fadeOut slow"
+    enter-active-class="animated fadeIn ad-400"
+    leave-active-class="animated fadeOut ad-400"
   >
     <button
       v-if="ux.sidebarIsOpen"
