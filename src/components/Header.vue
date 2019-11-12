@@ -1,17 +1,25 @@
 <template>
-  <div
+  <header
     class="flex items-center justify-between flex-shrink-0 h-20 relative px-6 lg:px-12 shadow bg-white"
   >
-    <h1 class="text-2xl font-semibold text-gray-900">{{ routeName }}</h1>
-    <div class="hidden lg:flex items-center">
-      <button class="text-gray-600 hover:text-gray-500">
-        <BaseIcon name="search" class="w-6 h-6" />
-      </button>
-      <button class="ml-8 text-gray-600 hover:text-gray-500">
+    <div class="relative">
+      <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+        <BaseIcon name="search" class="w-6 h-6 text-gray-600" />
+      </span>
+      <input
+        type="text"
+        placeholder="Search"
+        class="w-72 py-2 pl-10 pr-4 rounded text-sm font-semibold text-gray-700 placeholder-gray-600 border border-gray-400 focus:border-gray-500 tp-all td-200 ttf-ease"
+      />
+    </div>
+    <div class="hidden lg:flex flex-shrink-0 items-center">
+      <button
+        class="ml-8 text-gray-500 hover:text-gray-600 tp-color td-200 ttf-ease"
+      >
         <BaseIcon name="bell" class="w-6 h-6" />
       </button>
       <button
-        class="px-3 py-2 ml-8 rounded text-gray-900 bg-gray-300 hover:bg-gray-400 focus:outline-none"
+        class="px-3 py-1 ml-8 rounded border border-gray-400 font-semibold text-gray-800 hover:bg-gray-400 focus:outline-none tp-bg td-200 ttf-ease"
       >
         Log out
       </button>
@@ -22,17 +30,5 @@
     >
       <BaseIcon name="menu" class="w-8 h-8 text-gray-600" />
     </button>
-  </div>
+  </header>
 </template>
-
-<script>
-import { upperFirst } from 'lodash'
-
-export default {
-  computed: {
-    routeName() {
-      return upperFirst(this.$route.name)
-    },
-  },
-}
-</script>

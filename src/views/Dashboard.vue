@@ -1,35 +1,90 @@
+// NOTE Usar esta estructura de columnas y columns para las demas vistas
 <template>
-  <div class="flex-grow overflow-y-auto">
-    <div class="flex items-center justify-between mt-10 mb-2 px-6 lg:px-12">
-      <h2 class="text-xl font-semibold">Overview</h2>
-      <button
-        class="px-3 py-2 rounded-lg text-sm text-gray-900 bg-gray-300 hover:bg-gray-400 focus:outline-none"
-      >
-        Last 30 days
-      </button>
-    </div>
-    <div class="lg:flex px-2 lg:px-8">
-      <div class="flex-grow flex-shrink h-56 p-3">
-        <div class="w-full h-full rounded-lg shadow-md bg-white"></div>
+  <main class="flex-grow pt-6 px-6 lg:px-12 overflow-y-auto">
+    <h2 class="block mb-1 text-lg text-gray-800">Sales</h2>
+    <!-- Columns -->
+    <div class="lg:flex -mx-2 mb-4">
+      <!-- Column -->
+      <div class="flex-grow flex-shrink p-2 lg:pr-0">
+        <!-- Card -->
+        <div
+          class="w-full h-full p-4 rounded-lg lg:rounded-tr-none lg:rounded-br-none shadow bg-white"
+        >
+          <p class="text-xs font-semibold text-gray-700">Today</p>
+          <div class="flex items-center justify-between">
+            <p class="text-indigo-500">CAD$973.00</p>
+            <div class="flex items-center text-red-700">
+              <BaseIcon name="arrow-down" class="w-3 h-3" />
+              <span class="text-xs font-bold">8%</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="flex-grow flex-shrink h-56 p-3">
-        <div class="w-full h-full rounded-lg shadow-md bg-white"></div>
+      <!-- Column -->
+      <div class="flex-grow flex-shrink p-2 lg:px-0">
+        <!-- Card -->
+        <div
+          class="w-full h-full p-4 rounded-lg lg:rounded-none shadow bg-white"
+        >
+          <p class="text-xs font-semibold text-gray-700">Last 7 days</p>
+          <div class="flex items-center justify-between">
+            <p class="text-indigo-500">CA$12,027.00</p>
+            <div class="flex items-center text-green-700">
+              <BaseIcon name="arrow-up" class="w-3 h-3" />
+              <span class="text-xs font-bold">8%</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="flex-grow flex-shrink h-56 p-3">
-        <div class="w-full h-full rounded-lg shadow-md bg-white"></div>
+      <!-- Column -->
+      <div class="flex flex-col flex-grow flex-shrink p-2 lg:pl-0">
+        <!-- Card -->
+        <div
+          class="w-full h-full p-4 rounded-lg lg:rounded-tl-none lg:rounded-bl-none shadow bg-white"
+        >
+          <p class="text-xs font-semibold text-gray-700">Last 30 days</p>
+          <div class="flex items-center justify-between">
+            <p class="text-indigo-500">CA$57,929.00</p>
+            <div class="flex items-center text-green-700">
+              <BaseIcon name="arrow-up" class="w-3 h-3" />
+              <span class="text-xs font-bold">8%</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex items-center justify-between mt-10 mb-2 px-6 lg:px-12">
-      <h2 class="text-xl font-semibold">Recent Avtivity</h2>
-      <a href="@" class="flex items-center hover:text-gray-700">
-        <span>View all activities</span>
-        <BaseIcon name="arrow-right" class="w-4 h-4 mt-1 ml-1" />
-      </a>
-    </div>
-    <div class="lg:flex mb-10 px-2 lg:px-8">
-      <div class="flex-grow flex-shrink w-full h-92 p-3">
-        <div class="w-full h-full rounded-lg shadow-md bg-white"></div>
+    <!-- Columns -->
+    <div class="lg:flex -mx-2 mb-4">
+      <!-- Column -->
+      <div class="flex flex-col flex-grow flex-shrink-0 p-2 lg:w-1/3">
+        <h2 class="block mb-1 text-lg text-gray-800">Payout</h2>
+        <!-- Card -->
+        <div class="w-full h-full p-4 rounded-lg shadow bg-white">
+          <p class="text-xs font-semibold text-gray-700">Today</p>
+          <div class="flex items-center justify-between">
+            <p class="text-indigo-500">CAD$973.00</p>
+            <div class="flex items-center text-red-700">
+              <BaseIcon name="arrow-down" class="w-3 h-3" />
+              <span class="text-xs font-bold">8%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Column -->
+      <div class="flex flex-col flex-grow flex-shrink-0 p-2 lg:w-2/3">
+        <h2 class="block mb-1 text-lg text-gray-800">Overview</h2>
+        <!-- Card -->
+        <div class="w-full h-full p-4 rounded-lg shadow bg-white">
+          <p class="text-xs font-semibold text-gray-700">Last 7 days</p>
+          <div class="flex items-center justify-between">
+            <p class="text-indigo-500">CA$12,027.00</p>
+            <div class="flex items-center text-green-700">
+              <BaseIcon name="arrow-up" class="w-3 h-3" />
+              <span class="text-xs font-bold">8%</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
