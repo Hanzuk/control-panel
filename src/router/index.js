@@ -1,39 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import DashboardLayout from '../layouts/DashboardLayout.vue'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'app',
-    component: DashboardLayout,
+    name: 'home',
+    component: Home,
     redirect: '/dashboard',
     children: [
       {
         path: 'dashboard',
         name: 'dashboard',
         component: () =>
-          import(/* webpackChunkName: "reports" */ '../views/Dashboard.vue'),
+          import(
+            /* webpackChunkName: "reports" */ '../views/home/Dashboard.vue'
+          ),
       },
       {
         path: 'reports',
         name: 'reports',
         component: () =>
-          import(/* webpackChunkName: "reports" */ '../views/Reports.vue'),
+          import(/* webpackChunkName: "reports" */ '../views/home/Reports.vue'),
       },
       {
         path: 'security',
         name: 'security',
         component: () =>
-          import(/* webpackChunkName: "security" */ '../views/Security.vue'),
+          import(
+            /* webpackChunkName: "security" */ '../views/home/Security.vue'
+          ),
       },
       {
         path: 'settings',
         name: 'settings',
         component: () =>
-          import(/* webpackChunkName: "settings" */ '../views/Settings.vue'),
+          import(
+            /* webpackChunkName: "settings" */ '../views/home/Settings.vue'
+          ),
       },
     ],
   },

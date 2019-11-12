@@ -15,6 +15,7 @@ import Header from '@/components/Header.vue'
 import SidebarBackground from '@/components/SidebarBackground.vue'
 
 export default {
+  name: 'home',
   components: {
     Sidebar,
     Header,
