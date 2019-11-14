@@ -2,7 +2,7 @@
   <div
     class="fixed lg:static top-0 bottom-0 left-auto w-64 z-30 bg-gray-700 tp-right td-400 ttf-sine"
     :class="[
-      { '-right-100': !ux.sidebarIsOpen },
+      { '-right-full': !ux.sidebarIsOpen },
       { 'right-0': ux.sidebarIsOpen },
     ]"
   >
